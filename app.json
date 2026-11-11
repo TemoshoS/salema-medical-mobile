@@ -1,13 +1,18 @@
 {
   "expo": {
-    "name": "mobile",
+    "name": "Salema Medical",
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Salema Medical uses your camera during an in-app medical video call.",
+        "NSMicrophoneUsageDescription": "Salema Medical uses your microphone during an in-app medical audio or video call."
+      },
+      "bundleIdentifier": "com.mansalema.salemamedical"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +21,32 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mansalema.salemamedical"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Salema Medical uses your location during an active dispatch to share your ambulance or medical transport vehicle's position."
+        }
+      ],
+      [
+        "react-native-maps",
+        {
+          "androidGoogleMapsApiKey": "AIzaSyCtMqFMyTe-hIgUOaIoa9uhdOeT7fqGL7w"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "77bc2c0d-c910-45d3-8596-c1aff2221328"
+      }
     }
   }
 }
